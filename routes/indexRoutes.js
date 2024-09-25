@@ -97,8 +97,8 @@ router.get('/professor/:id', async (req, res) => {
 // atualizar                        : professor
 router.put('/professor/:id', async (req, res) => {
     try {
-        const {id_titulo, name, sex, civil_status, date} = req.body;
-        const professor = await Professor.updateRow(req.params.id, id_titulo, name, sex, civil_status, date);
+        const {tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone} = req.body;
+        const professor = await Professor.updateRow(req.params.id, tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone);
         res.status(201).json({message: 'Task Completed Successfully'})
     } catch (err){
         console.log(`Error:${err}`);

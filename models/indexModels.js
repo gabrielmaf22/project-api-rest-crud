@@ -44,8 +44,8 @@ const Professor = {
         const {rows} = await db.query(`INSERT INTO professor(tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone) VALUES ('${tx_nome}', '${tx_sexo}',  '${tx_estado_civil}', '${dt_nascimento}', '${tx_telefone}');`);
     },
 
-    async updateRow(id, id_titulo, name, sex, civil_status, date){
-        const {rows} = await db.query(`UPDATE professor SET id_titulo=${id_titulo}, tx_nome='${name}', tx_sexo='${sex}', tx_estado_civil'${civil_status}', dt_nascimento='${date}' WHERE id_professor=${id};`)
+    async updateRow(id, tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone){
+        const {rows} = await db.query(`UPDATE professor SET tx_nome='${tx_nome}', tx_sexo='${tx_sexo}', tx_estado_civil='${tx_estado_civil}', dt_nascimento='${dt_nascimento}', tx_telefone='${tx_telefone}' WHERE id_professor=${id};`)
     },
 
     async deleteRow(id){
