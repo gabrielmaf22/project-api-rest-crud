@@ -1,0 +1,114 @@
+INSERT INTO titulo (id_titulo, tx_descricao) VALUES 
+(1, 'Doutor em Ciência da Computação'),
+(2, 'Mestre em Engenharia Elétrica'),
+(3, 'Bacharel em Administração'),
+(4, 'Especialista em Direito Civil'),
+(5, 'Mestre em Psicologia Social'),
+(6, 'Doutor em Economia'),
+(7, 'Bacharel em Engenharia de Software'),
+(8, 'Mestre em Medicina Interna'),
+(9, 'Doutor em Biologia Molecular'),
+(10, 'Bacharel em Arquitetura');
+
+INSERT INTO instituicao (tx_sigla, tx_descricao) VALUES
+('UFMG', 'Universidade Federal de Minas Gerais'),
+('USP', 'Universidade de São Paulo'),
+('UnB', 'Universidade de Brasília'),
+('UFRJ', 'Universidade Federal do Rio de Janeiro'),
+('Unicamp', 'Universidade Estadual de Campinas'),
+('UFSC', 'Universidade Federal de Santa Catarina'),
+('UFRGS', 'Universidade Federal do Rio Grande do Sul'),
+('UFPE', 'Universidade Federal de Pernambuco'),
+('Unesp', 'Universidade Estadual Paulista'),
+('UFG', 'Universidade Federal de Goiás');
+
+INSERT INTO tipo_curso (id_tipo_curso, tx_descricao) VALUES
+(1, 'Graduação'),
+(2, 'Pós-graduação'),
+(3, 'Mestrado'),
+(4, 'Doutorado'),
+(5, 'Técnico'),
+(6, 'Extensão'),
+(7, 'Especialização'),
+(8, 'MBA'),
+(9, 'Residência Médica'),
+(10, 'Curso Livre');
+
+INSERT INTO tipo_disciplina (tx_descricao) VALUES
+('Obrigatória'),
+('Optativa');
+
+INSERT INTO aluno (tx_nome, tx_sexo, dt_nascimento) VALUES
+(1, 'Ana Oliveira', 'f', '2000-03-12'),
+(2, 'Bruno Santos', 'm', '2001-06-25'),
+(3, 'Carla Silva', 'f', '1999-12-05'),
+(4, 'Daniel Pereira', 'm', '2000-08-18'),
+(5, 'Eduarda Costa', 'f', '2001-02-10'),
+(6, 'Fábio Souza', 'm', '1999-09-28'),
+(7, 'Gabriela Almeida', 'f', '2000-11-15'),
+(8, 'Henrique Oliveira', 'm', '2001-04-20'),
+(9, 'Isabela Fernandes', 'f', '2000-07-03'),
+(10, 'Júlio Martins', 'm', '2001-01-08');
+
+INSERT INTO professor (id_professor, id_titulo, tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone) VALUES
+(1, 1, 'João da Silva', 'm', 'c', '1975-05-15', '79999999999'),
+(2, 2, 'Maria Santos', 'f', 's', '1982-09-20', '79999999999'),
+(3, 3, 'Pedro Almeida', 'm', 's', '1988-03-10', '79999999999'),
+(4, 4, 'Ana Oliveira', 'f', 'c', '1970-11-28', '79999999999'),
+(5, 5, 'Carlos Pereira', 'm', 's', '1990-07-03', '79999999999'),
+(6, 6, 'Juliana Costa', 'f', 's', '1985-12-12', '79999999999'),
+(7, 7, 'Fernando Mendes', 'm', 'c', '1978-04-25', '79999999999'),
+(8, 8, 'Luiza Gomes', 'f', 'c', '1983-08-18', '79999999999'),
+(9, 9, 'Rafaela Martins', 'f', 's', '1995-02-08', '79999999999'),
+(10, 10, 'Rodrigo Souza', 'm', 's', '1980-06-30', '79999999999');
+
+
+INSERT INTO curso (id_curso, id_instituicao, id_tipo_curso, tx_descricao) VALUES
+(1, 1, 1, 'Engenharia de Computação'),
+(2, 2, 1, 'Medicina'),
+(3, 3, 1, 'Direito'),
+(4, 4, 1, 'Administração'),
+(5, 5, 1, 'Ciência da Computação'),
+(6, 6, 2, 'Engenharia Civil'),
+(7, 7, 2, 'Psicologia'),
+(8, 8, 2, 'Arquitetura e Urbanismo'),
+(9, 9, 2, 'Economia'),
+(10, 10, 2, 'Biologia');
+
+INSERT INTO disciplina (id_disciplina, id_curso, id_tipo_disciplina, tx_sigla, tx_descricao, in_periodo, in_carga_horaria) VALUES
+(1, 1, 1, 'ECOM101', 'Introdução à Engenharia de Computação', 1, 60),
+(2, 2, 1, 'MED101', 'Anatomia Humana', 1, 80),
+(3, 3, 1, 'DIR101', 'Introdução ao Direito Civil', 1, 60),
+(4, 4, 1, 'ADM101', 'Fundamentos da Administração', 1, 50),
+(5, 5, 1, 'CPT101', 'Algoritmos e Estrutura de Dados', 1, 70),
+(6, 6, 1, 'CIV101', 'Mecânica dos Fluidos', 1, 75),
+(7, 7, 1, 'PSI101', 'Psicologia Geral', 1, 65),
+(8, 8, 1, 'ARQ101', 'História da Arquitetura', 1, 55),
+(9, 9, 1, 'ECO101', 'Introdução à Economia', 1, 60),
+(10, 10, 1, 'BIO101', 'Biologia Celular', 1, 70);
+
+INSERT INTO cursa (id_aluno, id_disciplina, in_ano, in_semestre, in_faltas, nm_nota1, nm_nota2, nm_nota3, bl_aprovado) VALUES
+(1, 1, 2023, 1, 2, 8.5, 7.8, 9.0, true),
+(2, 2, 2023, 1, 1, 9.0, 8.5, 7.0, true),
+(3, 3, 2023, 1, 3, 7.0, 6.5, 8.0, false),
+(4, 4, 2023, 1, 0, 6.5, 8.0, 7.5, true),
+(5, 5, 2023, 1, 2, 8.0, 8.0, 8.0, true),
+(6, 6, 2023, 1, 1, 7.5, 6.0, 7.0, true),
+(7, 7, 2023, 1, 4, 6.0, 5.5, 7.5, false),
+(8, 8, 2023, 1, 0, 8.0, 8.5, 8.0, true),
+(9, 9, 2023, 1, 2, 7.5, 6.5, 8.0, true),
+(10, 10, 2023, 1, 1, 8.5, 9.0, 7.5, true);
+
+INSERT INTO leciona (id_professor, id_disciplina) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
+
+
