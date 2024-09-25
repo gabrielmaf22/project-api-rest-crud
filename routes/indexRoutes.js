@@ -109,8 +109,8 @@ router.put('/professor/:id', async (req, res) => {
 // criar                            : professor
 router.post('/professor', async (req, res) => {
     try { 
-        const {id_titulo, name, sex, civil_status, date} = req.body;
-        const professor = await Professor.createRow(id_titulo, name, sex, civil_status, date);
+        const {tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone} = req.body;
+	const professor = await Professor.createRow(tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone);
         res.status(201).json({message: 'Task Completed Sucessfully'});
     } catch(err){
         console.log(`Error:${err}`);

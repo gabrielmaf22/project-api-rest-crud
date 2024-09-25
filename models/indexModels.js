@@ -40,8 +40,8 @@ const Professor = {
         return rows[0];
     },
 
-    async createRow(id_titulo, name, sex, civil_status, date){
-        const {rows} = await db.query(`INSERT INTO professor(id_titulo, tx_nome, tx_sexo, tx_estado_civil, dt_nascimento) VALUES (${id_titulo}, '${name}', '${sex}', '${civil_status}}', '${date}');`);
+    async createRow(tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone){
+        const {rows} = await db.query(`INSERT INTO professor(tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone) VALUES ('${tx_nome}', '${tx_sexo}',  '${tx_estado_civil}', '${dt_nascimento}', '${tx_telefone}');`);
     },
 
     async updateRow(id, id_titulo, name, sex, civil_status, date){
